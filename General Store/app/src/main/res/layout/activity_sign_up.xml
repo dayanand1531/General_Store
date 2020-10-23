@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/gridentbackground"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/adduserbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Change_password">
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Sign Up"
+                android:textColor="@color/buttontext"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_old_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/editbox"
+                android:ems="10"
+                android:hint="Full Name*"
+                android:inputType="textPersonName"
+                android:maxLength="30"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="@+id/textView26"
+                app:layout_constraintStart_toStartOf="@+id/textView26"
+                app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+            <EditText
+                android:id="@+id/et_new_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/editbox"
+                android:ems="10"
+                android:hint="New Password*"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="@+id/et_old_password"
+                app:layout_constraintStart_toStartOf="@+id/et_old_password"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fullname_error" />
+
+            <EditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/editbox"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPersonName"
+                android:maxLength="15"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="@+id/et_new_password"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/et_new_password"
+                app:layout_constraintTop_toBottomOf="@+id/tv_newpassword_error" />
+
+            <Button
+                android:id="@+id/btn_set_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/buttonbackground"
+                android:text="Set"
+                android:textAllCaps="false"
+                android:textColor="@color/buttontext"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/et_confirm_password"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="@+id/et_confirm_password"
+                app:layout_constraintTop_toBottomOf="@+id/tv_confirmpassword_error" />
+
+            <TextView
+                android:id="@+id/tv_fullname_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="TextView"
+                android:textColor="@color/buttontext"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/et_old_password"
+                app:layout_constraintTop_toBottomOf="@+id/et_old_password" />
+
+            <TextView
+                android:id="@+id/tv_newpassword_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="TextView"
+                android:textColor="@color/buttontext"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/et_new_password"
+                app:layout_constraintTop_toBottomOf="@+id/et_new_password" />
+
+            <TextView
+                android:id="@+id/tv_confirmpassword_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="TextView"
+                android:textColor="@color/buttontext"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/et_confirm_password"
+                app:layout_constraintTop_toBottomOf="@+id/et_confirm_password" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

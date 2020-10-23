@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/gridentbackground"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/adduserbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".AddNewUser">
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="10dp"
+                android:background="@color/buttontext"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:src="@drawable/ic_arrow_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Add New Customer"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/editbox"
+                android:ems="10"
+                android:hint="Full Name*"
+                android:inputType="textPersonName"
+                android:maxLength="30"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+            <EditText
+                android:id="@+id/etmobileno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/editbox"
+                android:ems="10"
+                android:hint="Mobile No.*"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="@+id/etfathername"
+                app:layout_constraintStart_toStartOf="@+id/etfathername"
+                app:layout_constraintTop_toBottomOf="@+id/tv_error_farher_name" />
+
+            <EditText
+                android:id="@+id/etfathername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/editbox"
+                android:ems="10"
+                android:hint="Father's Name*"
+                android:inputType="textPersonName"
+                android:maxLength="30"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="@+id/etUsername"
+                app:layout_constraintStart_toStartOf="@+id/etUsername"
+                app:layout_constraintTop_toBottomOf="@+id/tv_error_name" />
+
+            <EditText
+                android:id="@+id/etemailid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/editbox"
+                android:ems="10"
+                android:hint="Email ID*"
+                android:inputType="textEmailAddress"
+                android:maxLength="30"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="@+id/etmobileno"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/etmobileno"
+                app:layout_constraintTop_toBottomOf="@+id/tv_error_mobile_no" />
+
+            <Button
+                android:id="@+id/btnaddnewuser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/buttonbackground"
+                android:padding="@dimen/_10sdp"
+                android:text="Add New User"
+
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/etemailid"
+                app:layout_constraintStart_toStartOf="@+id/etemailid"
+                app:layout_constraintTop_toBottomOf="@+id/tv_error_email" />
+
+            <TextView
+                android:id="@+id/tv_error_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:cursorVisible="false"
+                android:text="TextView"
+                android:textColor="@color/buttontext"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/etUsername"
+                app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+
+            <TextView
+                android:id="@+id/tv_error_farher_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="TextView"
+                android:textColor="@color/buttontext"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/etfathername"
+                app:layout_constraintTop_toBottomOf="@+id/etfathername" />
+
+            <TextView
+                android:id="@+id/tv_error_mobile_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="TextView"
+                android:textColor="@color/buttontext"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/etmobileno"
+                app:layout_constraintTop_toBottomOf="@+id/etmobileno" />
+
+            <TextView
+                android:id="@+id/tv_error_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/buttontext"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/etemailid"
+                app:layout_constraintTop_toBottomOf="@+id/etemailid" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

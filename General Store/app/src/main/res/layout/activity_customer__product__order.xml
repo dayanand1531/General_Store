@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Customer_Product_Order">
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/buttontext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Product Order List"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/ic_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:src="@drawable/ic_refresh" />
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:src="@drawable/ic_baseline_more_vert_24" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/etProduct_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/editbox"
+        android:hint="Product Name"
+        android:inputType="textPersonName"
+        android:maxLength="30"
+        android:padding="@dimen/_5sdp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toStartOf="@+id/et_Price"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+    <EditText
+        android:id="@+id/et_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/editbox"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        android:maxLength="30"
+        android:padding="@dimen/_5sdp"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@+id/etProduct_name"
+        app:layout_constraintEnd_toStartOf="@+id/et_Quality"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etProduct_name"
+        app:layout_constraintTop_toTopOf="@+id/etProduct_name" />
+
+    <EditText
+        android:id="@+id/et_Quality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/editbox"
+        android:hint="0"
+        android:inputType="number"
+        android:maxLength="30"
+        android:padding="@dimen/_5sdp"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@+id/et_Price"
+        app:layout_constraintEnd_toStartOf="@+id/tv_subtotal_dailog"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/et_Price"
+        app:layout_constraintTop_toTopOf="@+id/et_Price" />
+
+    <TextView
+        android:id="@+id/tv_subtotal_dailog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/editbox"
+        android:padding="@dimen/_5sdp"
+        android:text="Total"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_Quality"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/et_Quality"
+        app:layout_constraintTop_toTopOf="@+id/et_Quality" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_productlist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvgrandtotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_item"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_add_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttonbackground"
+        android:padding="@dimen/_5sdp"
+        android:text="Add product"
+        android:textAllCaps="false"
+        android:textColor="@color/buttontext"
+        app:layout_constraintEnd_toStartOf="@+id/btnrefresh"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etProduct_name" />
+
+    <TextView
+        android:id="@+id/tvgrandtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnrefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonbackground"
+        android:text="Refresh"
+        android:textAllCaps="false"
+        android:textColor="@color/buttontext"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_add_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_add_item"
+        app:layout_constraintTop_toTopOf="@+id/btn_add_item" />
+
+    <Button
+        android:id="@+id/btn_process"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:text="Process"
+        android:textAllCaps="false"
+        android:background="@drawable/buttonbackground"
+        android:textColor="@color/buttontext"
+        app:layout_constraintBottom_toBottomOf="@+id/tvgrandtotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvgrandtotal" />
+
+    <TextView
+        android:id="@+id/tv_customername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvgrandtotal"
+        app:layout_constraintEnd_toStartOf="@+id/btn_process"
+        app:layout_constraintStart_toEndOf="@+id/tvgrandtotal"
+        app:layout_constraintTop_toTopOf="@+id/tvgrandtotal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
